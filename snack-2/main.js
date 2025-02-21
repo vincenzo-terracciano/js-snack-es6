@@ -3,27 +3,27 @@ Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
 Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.*/
 
 const footballTeam = [{
-    name: "napoli",
+    name: "Napoli",
     points: 0,
     fouls: 0
 },
 {
-    name: "real madrid",
+    name: "Real Madrid",
     points: 0,
     fouls: 0
 },
 {
-    name: "bayern monaco",
+    name: "Bayern Monaco",
     points: 0,
     fouls: 0
 },
 {
-    name: "arsenal",
+    name: "Arsenal",
     points: 0,
     fouls: 0
 },
 {
-    name: "manchester city",
+    name: "Manchester City",
     points: 0,
     fouls: 0
 }]
@@ -52,5 +52,15 @@ for (let i = 0; i < footballTeam.length; i++) {
 }
 console.log(footballTeamNameFouls);
 
+/* print the football team's name with points and fouls */
+let winner = footballTeam[0]
+
+for(let i = 0; i < footballTeam.length; i++){
+    const thisFootballTeam = footballTeam[i];
+    if(thisFootballTeam.points > winner.points){
+        winner = thisFootballTeam
+    }
+}
+console.log(`The winner is ${winner.name} with ${winner.points} points`);
 
 
