@@ -7,18 +7,15 @@ console.log(valoriUniciPerProprieta([
     { nome: "Anna", citta: "Roma" }
 ], "citta")); // Output: ["Roma", "Milano"]
 
-const nameCity = [
-    { nome: "Mario", citta: "Roma" },
-    { nome: "Luigi", citta: "Milano" },
-    { nome: "Anna", citta: "Roma" }
-]
-
 function valoriUniciPerProprieta(arrObj, chiave){
     let newArray = [];
     let newObj = {};
     for(let i = 0; i < arrObj.length; i++){
-        const thisElement = arrObj[i];
-        
+        const thisElement = arrObj[i][chiave];
+        if(newObj[thisElement] === undefined){
+            newObj[thisElement] = true 
+            newArray.push(thisElement)
+        }
     }
     return newArray
 }
